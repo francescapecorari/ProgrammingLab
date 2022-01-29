@@ -11,19 +11,19 @@ values = []
 #apro il file in modalità lettura e lo stampo a schermo
 my_file = open('shampoo_sales.txt','r')
 
-print(my_file.read())
-
 #devo ricavare i valori delle vendite separandoli dalle date
 for line in my_file:
+
     element = (line.split (','))
 
 #devo togliere la linea con l' intestazione
-    if element in my_file != Date and element != Sales:
+    if element[0] != 'Date' and element[1]!= 'Sales':
         data = element[0]
         value = element[1]
 
 #aggiungo i valori delle vendite alla lista
-    values.append(float(value))
+        values.append(float(value))
+
 #provo a stampare la lista
 print("valori: {}".format(values))
 
